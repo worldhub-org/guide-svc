@@ -43,7 +43,7 @@ public class GuidePublicController {
     public ResponseEntity<GuidePreviewResponse> getGuideById(@PathVariable UUID guideId) {
 
         Guide guide = guideService.getById(guideId);
-
+        //comment
         GuidePreviewResponse response = GuideMapper.mapToGuidePreview(guide);
 
         return ResponseEntity.ok(response);

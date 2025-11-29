@@ -92,7 +92,7 @@ public class GuideController {
 
     // POST /guides/{guideId}/sections
     //--only base information with DTO
-    // TODO: Vik, Please elaborate!
+    // TODO: Vik, Please elaborate!.......
     @PostMapping("/{guideId}/sections")
     public ResponseEntity<SectionResponse> createSection(@PathVariable UUID guideId,
                                                          @RequestBody @Valid SectionCreateRequest request,

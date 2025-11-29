@@ -81,6 +81,8 @@ public class GuideMapper {
                 .build();
     }
 
+    // test
+
     public static GuidePreviewResponse mapToGuidePreview(Guide g) {
 
         return GuidePreviewResponse.builder()
