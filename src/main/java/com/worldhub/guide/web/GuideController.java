@@ -56,8 +56,7 @@ public class GuideController {
     }
 
     @GetMapping("/{guideId}")
-    public ResponseEntity<GuideResponse> getGuide(@PathVariable UUID guideId,
-                                                  @AuthenticationPrincipal AuthenticationMetadata metadata) {
+    public ResponseEntity<GuideResponse> getGuide(@PathVariable UUID guideId) {
 
 
         Guide guide = guideService.getById(guideId);
