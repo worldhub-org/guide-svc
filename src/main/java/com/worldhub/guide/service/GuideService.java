@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.nio.file.AccessDeniedException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -70,7 +69,7 @@ public class GuideService {
                 });
     }
 
-    public List<Guide> findAll() {
+    public List<Guide> getAll() {
 
         return guideRepository.findAll();
     }

@@ -43,7 +43,7 @@ public class GuideController {
         this.sectionService = sectionService;
     }
 
-    @PostMapping
+    @PostMapping(produces = "application/vnd.world-hub.empty.v1+json")
     public ResponseEntity<GuideResponse> createGuide(@RequestBody @Valid GuideCreateRequest request,
                                                      @AuthenticationPrincipal AuthenticationMetadata metadata) {
 
@@ -70,7 +70,7 @@ public class GuideController {
     @GetMapping
     public ResponseEntity<List<GuideResponse>> getAllGuides() {
 
-        List<Guide> guides = guideService.findAll();
+        List<Guide> guides = guideService.getAll();
 
         List<GuideResponse> response = guides.stream()
                 .map(GuideMapper::mapToResponse)

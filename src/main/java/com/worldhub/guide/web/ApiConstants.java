@@ -15,6 +15,7 @@ public class ApiConstants {
     public static class EndpointPaths {
 
         public static final String GUIDES = "/guides";
+        public static final String PUBLIC_GUIDES = "/public/guides";
         public static final String SECTIONS = "/sections";
         public static final String ACTIVITIES = "/activities";
     }

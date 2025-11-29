@@ -1,16 +1,12 @@
 package com.worldhub.guide.util;
 
-import com.worldhub.guide.model.CostType;
 import com.worldhub.guide.model.Guide;
 import com.worldhub.guide.model.GuideStatus;
-import com.worldhub.guide.web.dto.guide.GuideCreateRequest;
-import com.worldhub.guide.web.dto.guide.GuideResponse;
-import com.worldhub.guide.web.dto.guide.GuideUpdateRequest;
+import com.worldhub.guide.web.dto.guide.*;
 import com.worldhub.guide.web.dto.section.SectionResponse;
 import com.worldhub.guide.web.dto.tags.TagResponse;
 import com.worldhub.guide.web.dto.tags.TagsCollectionResponse;
 
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +25,15 @@ public class GuideMapper {
                 .costType(request.getCostType())
                 .price(request.getPrice())
                 .currency(request.getCurrency())
-                .isDeleted(false)
+                .averageRate(0.0)
                 .sections(new ArrayList<>())
+                .version(1)
+                .versionKey(UUID.randomUUID())
+                .status(GuideStatus.IN_DEVELOPMENT)
+                .isDeleted(false)
+                .reviews(new ArrayList<>())
                 .createdOn(OffsetDateTime.now())
                 .updatedOn(OffsetDateTime.now())
-                .status(GuideStatus.IN_DEVELOPMENT)
-                .version(1)
                 .build();
     }
 
@@ -69,6 +68,36 @@ public class GuideMapper {
 
         return TagsCollectionResponse.builder()
                 .tags(tags)
+                .build();
+    }
+
+    public static GuidePreviewCollection mapToGuidePreviewCollection(List<Guide> guides) {
+
+        List<GuidePreviewResponse> previews = guides.stream()
+                .map(GuideMapper::mapToGuidePreview).toList();
+
+        return GuidePreviewCollection.builder()
+                .previews(previews)
+                .build();
+    }
+
+    public static GuidePreviewResponse mapToGuidePreview(Guide g) {
+
+        return GuidePreviewResponse.builder()
+                .id(g.getId())
+                .ownerId(g.getOwnerId())
+                .title(g.getTitle())
+                .description(g.getDescription())
+                .recommendedFor(g.getRecommendedFor())
+                .city(g.getCity())
+                .country(g.getCountry())
+                .costType(g.getCostType())
+                .price(g.getPrice())
+                .currency(g.getCurrency())
+                .averageRate(g.getAverageRate())
+                .createdOn(g.getCreatedOn())
+                .updatedOn(g.getUpdatedOn())
+                .status(g.getStatus())
                 .build();
     }
 }
