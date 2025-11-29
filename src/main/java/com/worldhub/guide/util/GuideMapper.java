@@ -38,26 +38,6 @@ public class GuideMapper {
                 .build();
     }
 
-    public static void applyUpdates(Guide guide, GuideUpdateRequest request) {
-
-        guide.setTitle(request.getTitle());
-        guide.setDescription(request.getDescription());
-        guide.setRecommendedFor(request.getRecommendedFor());
-        guide.setCity(request.getCity());
-        guide.setCountry(request.getCountry());
-        guide.setCostType(request.getCostType());
-
-        if (request.getCostType() == CostType.FREE) {
-            guide.setPrice(BigDecimal.ZERO);
-            guide.setCurrency(null);
-        } else if (request.getCostType() == CostType.PAID) {
-            guide.setPrice(request.getPrice());
-            guide.setCurrency(request.getCurrency());
-        }
-
-        guide.setUpdatedOn(OffsetDateTime.now());
-    }
-
     public static GuideResponse mapToResponse(Guide guide) {
 
         List<SectionResponse> sections = guide.getSections()

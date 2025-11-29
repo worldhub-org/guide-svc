@@ -57,11 +57,16 @@ public class Guide {
     private List<Section> sections;
 
     @Column(nullable = false)
-    private double version;
+    private Integer version;
+
+    @Column(nullable = false)
+    private UUID versionKey;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private GuideStatus status;
+
+    private String systemReviewNote;
 
     private boolean isDeleted;
 

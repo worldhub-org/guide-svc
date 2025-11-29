@@ -30,7 +30,7 @@ public class SectionService {
         this.activityService = activityService;
     }
 
-    public Section create(UUID guideId, SectionCreateRequest request) {
+    public Section create(SectionCreateRequest request, UUID guideId, UUID userId) {
 
         Section section = SectionMapper.mapToSection(request);
 
@@ -63,7 +63,7 @@ public class SectionService {
 
     public Section addActivityToSection(UUID sectionId, UUID activityId) {
 
-        Activity activity = activityService.getActivityById(activityId);
+        Activity activity = activityService.getById(activityId);
         Section section = getSectionById(sectionId);
 
         //section.getActivities().add(activity);

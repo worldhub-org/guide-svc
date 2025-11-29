@@ -1,6 +1,7 @@
 package com.worldhub.guide.service;
 
 import com.worldhub.guide.exception.DomainException;
+import com.worldhub.guide.exception.ForbiddenOperationException;
 import com.worldhub.guide.exception.ResourceNotFoundException;
 import com.worldhub.guide.model.CostType;
 import com.worldhub.guide.model.Guide;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.nio.file.AccessDeniedException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +27,7 @@ import java.util.UUID;
 @Service
 public class GuideService {
 
-    private static final Logger log = LoggerFactory.getLogger(GuideService.class);
+    private static final Logger logger = LoggerFactory.getLogger(GuideService.class);
 
     private final GuideRepository guideRepository;
 
@@ -40,38 +42,21 @@ public class GuideService {
 
         Guide persistedGuide = guideRepository.save(guide);
 
-        log.info("Guide with ID {} created by user {} with title '{}'.",
+        logger.info("Guide with ID {} created by user {} with title '{}'.",
                 persistedGuide.getId(), persistedGuide.getOwnerId(), persistedGuide.getTitle());
 
         return persistedGuide;
     }
 
-    public Guide updateGuideById(GuideUpdateRequest request, UUID guideId) {
+    public Guide updateById(GuideUpdateRequest request, UUID guideId, UUID userId) {
 
         Guide guide = getById(guideId);
 
-        if (request.getCostType() == CostType.FREE &&
-                (request.getPrice() != null || request.getCurrency() != null)) {
-            log.warn("FREE guides cannot have price or currency.");
-            throw new DomainException("FREE guides cannot have price or currency.");
-        }
-
-        if (request.getPrice() != null && request.getPrice().compareTo(BigDecimal.ZERO) < 0) {
-            log.warn("Price cannot be negative.");
-            throw new DomainException("Price cannot be negative.");
-        }
-
-        if ((request.getPrice() != null || request.getCurrency() != null) &&
-                (request.getCostType() != null && request.getCostType() != CostType.PAID) &&
-                guide.getCostType() != CostType.PAID) {
-            log.warn("Price and currency can only be set for PAID guides");
-            throw new DomainException("Price and currency can only be set for PAID guides");
-        }
-
-        GuideMapper.applyUpdates(guide, request);
+        validateUpdateRequest(request, userId, guide);
+        applyUpdates(guide, request);
 
         Guide updatedGuide = guideRepository.save(guide);
-        log.info("Guide with ID {} updated.", updatedGuide.getId());
+        logger.info("Guide with ID [{}] updated.", updatedGuide.getId());
 
         return updatedGuide;
     }
@@ -80,7 +65,7 @@ public class GuideService {
 
         return guideRepository.findById(guideId)
                 .orElseThrow(() -> {
-                    log.warn("Guide with ID {} not found.", guideId);
+                    logger.warn("Guide with ID [{}] not found.", guideId);
                     return new ResourceNotFoundException(String.format("Guide with ID [%s] not found.", guideId));
                 });
     }
@@ -96,7 +81,7 @@ public class GuideService {
         guide.getSections().add(section);
 
         guideRepository.save(guide);
-        log.info("Section with ID {} successfully added to guide with ID {}", section.getId(), guide.getId());
+        logger.info("Section with ID [{}] successfully added to guide with ID [{}]", section.getId(), guide.getId());
     }
 
     public List<TagResponse> getAllTags() {
@@ -108,5 +93,51 @@ public class GuideService {
                         .description(tag.getDescription())
                         .build())
                 .toList();
+    }
+
+    private void applyUpdates(Guide guide, GuideUpdateRequest request) {
+
+        guide.setTitle(request.getTitle());
+        guide.setDescription(request.getDescription());
+        guide.setRecommendedFor(request.getRecommendedFor());
+        guide.setCity(request.getCity());
+        guide.setCountry(request.getCountry());
+        guide.setCostType(request.getCostType());
+
+        if (request.getCostType() == CostType.FREE) {
+            guide.setPrice(BigDecimal.ZERO);
+            guide.setCurrency(null);
+        } else if (request.getCostType() == CostType.PAID) {
+            guide.setPrice(request.getPrice());
+            guide.setCurrency(request.getCurrency());
+        }
+
+        guide.setUpdatedOn(OffsetDateTime.now());
+    }
+
+
+    private void validateUpdateRequest(GuideUpdateRequest request, UUID userId, Guide guide) {
+
+        if (!guide.getOwnerId().equals(userId)) {
+            logger.warn("User with ID [{}] is not owner of guide: [{}].", userId, guide.getOwnerId());
+            throw new ForbiddenOperationException("User with ID [%s] is not owner if the guide:".formatted(userId));
+        }
+
+        if (request.getCostType() == CostType.FREE && (request.getPrice() != null || request.getCurrency() != null)) {
+            logger.warn("FREE guides cannot have price or currency.");
+            throw new DomainException("FREE guides cannot have price or currency.");
+        }
+
+        if (request.getPrice() != null && request.getPrice().compareTo(BigDecimal.ZERO) < 0) {
+            logger.warn("Price cannot be negative.");
+            throw new DomainException("Price cannot be negative.");
+        }
+
+        if ((request.getPrice() != null || request.getCurrency() != null) &&
+                (request.getCostType() != null && request.getCostType() != CostType.PAID) &&
+                guide.getCostType() != CostType.PAID) {
+            logger.warn("Price and currency can only be set for PAID guides");
+            throw new DomainException("Price and currency can only be set for PAID guides");
+        }
     }
 }

@@ -27,9 +27,9 @@ public class ActivityService {
         this.activityExpenseService = activityExpenseService;
     }
 
-    public Activity createActivity(ActivityCreateRequest request) {
+    public Activity create(ActivityCreateRequest request, UUID userId) {
 
-        Activity activity = ActivityMapper.mapToActivity(request);
+        Activity activity = ActivityMapper.mapToActivity(request, userId);
 
         Activity persistedActivity = activityRepository.save(activity);
         log.info("Section with ID {} created successfully.", persistedActivity.getId());
@@ -46,7 +46,7 @@ public class ActivityService {
         return activityRepository.findAllByUserId(userId);
     }
 
-    public Activity getActivityById(UUID activityId) {
+    public Activity getById(UUID activityId) {
 
         return activityRepository.findById(activityId)
                 .orElseThrow(() -> {
@@ -55,9 +55,9 @@ public class ActivityService {
                 });
     }
 
-    public Activity updateActivity(ActivityUpdateRequest request, UUID activityId) {
+    public Activity update(ActivityUpdateRequest request, UUID activityId) {
 
-        Activity activity = getActivityById(activityId);
+        Activity activity = getById(activityId);
 
         ActivityMapper.applyUpdates(activity, request);
 

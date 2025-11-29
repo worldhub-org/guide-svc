@@ -56,7 +56,9 @@ public class GuideController {
     }
 
     @GetMapping("/{guideId}")
-    public ResponseEntity<GuideResponse> getGuide(@PathVariable UUID guideId) {
+    public ResponseEntity<GuideResponse> getGuide(@PathVariable UUID guideId,
+                                                  @AuthenticationPrincipal AuthenticationMetadata metadata) {
+
 
         Guide guide = guideService.getById(guideId);
         GuideResponse response = GuideMapper.mapToResponse(guide);
@@ -78,9 +80,12 @@ public class GuideController {
     }
 
     @PutMapping("/{guideId}")
-    public ResponseEntity<GuideResponse> updateGuide(@RequestBody @Valid GuideUpdateRequest request, @PathVariable UUID guideId) {
+    public ResponseEntity<GuideResponse> updateGuide(@RequestBody @Valid GuideUpdateRequest request,
+                                                     @PathVariable UUID guideId,
+                                                     @AuthenticationPrincipal AuthenticationMetadata metadata) {
 
-        Guide guide = guideService.updateGuideById(request, guideId);
+        UUID userId = metadata.getUserId();
+        Guide guide = guideService.updateById(request, guideId, userId);
         GuideResponse response = GuideMapper.mapToResponse(guide);
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
@@ -90,9 +95,12 @@ public class GuideController {
     //--only base information with DTO
     // TODO: Vik, Please elaborate!
     @PostMapping("/{guideId}/sections")
-    public ResponseEntity<SectionResponse> createSection(@PathVariable UUID guideId, @RequestBody @Valid SectionCreateRequest request) {
+    public ResponseEntity<SectionResponse> createSection(@PathVariable UUID guideId,
+                                                         @RequestBody @Valid SectionCreateRequest request,
+                                                         @AuthenticationPrincipal AuthenticationMetadata metadata) {
 
-        Section section = sectionService.create(guideId, request);
+        UUID userId =  metadata.getUserId();
+        Section section = sectionService.create(request, guideId, userId);
         SectionResponse response = SectionMapper.mapToResponse(section);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

@@ -6,12 +6,13 @@ import com.worldhub.guide.web.dto.activity.*;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class ActivityMapper {
-    public static Activity mapToActivity(ActivityCreateRequest request) {
+    public static Activity mapToActivity(ActivityCreateRequest request, UUID userId) {
 
         return Activity.builder()
-                .userId(request.getUserId())
+                .userId(userId)
                 .name(request.getName())
                 .description(request.getDescription())
                 //.location(request.getLocation())

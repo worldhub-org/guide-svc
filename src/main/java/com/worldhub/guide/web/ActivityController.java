@@ -8,9 +8,11 @@ import com.worldhub.guide.web.dto.activity.ActivityCreateRequest;
 import com.worldhub.guide.web.dto.activity.ActivityResponse;
 import com.worldhub.guide.web.dto.activity.ActivityUpdateRequest;
 import jakarta.validation.Valid;
+import library.AuthenticationMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,10 +33,12 @@ public class ActivityController {
     }
 
     @GetMapping
-    public ResponseEntity<ActivityCollectionResponse> getAllActivities(@PathVariable UUID userId) {
+    public ResponseEntity<ActivityCollectionResponse> getAllActivities(@AuthenticationPrincipal AuthenticationMetadata metadata) {
 
-        List<ActivityResponse> activities = activityService.getAllByUserId(userId).stream()
-                .map(ActivityMapper::mapToResponse).toList();
+        List<ActivityResponse> activities = activityService.getAllByUserId(metadata.getUserId())
+                .stream()
+                .map(ActivityMapper::mapToResponse)
+                .toList();
 
         ActivityCollectionResponse response = ActivityCollectionResponse.builder()
                 .activities(activities)
@@ -46,7 +50,7 @@ public class ActivityController {
     @GetMapping("/{activityId}")
     public ResponseEntity<ActivityResponse> getActivityById(@PathVariable UUID activityId) {
 
-        Activity activity = activityService.getActivityById(activityId);
+        Activity activity = activityService.getById(activityId);
 
         ActivityResponse response = ActivityMapper.mapToResponse(activity);
 
@@ -54,9 +58,10 @@ public class ActivityController {
     }
 
     @PostMapping
-    public ResponseEntity<ActivityResponse> createActivity(@RequestBody @Valid ActivityCreateRequest request) {
+    public ResponseEntity<ActivityResponse> createActivity(@RequestBody @Valid ActivityCreateRequest request,
+                                                           @AuthenticationPrincipal AuthenticationMetadata metadata) {
 
-        Activity activity = activityService.createActivity(request);
+        Activity activity = activityService.create(request, metadata.getUserId());
 
         ActivityResponse response = ActivityMapper.mapToResponse(activity);
 
@@ -66,7 +71,7 @@ public class ActivityController {
     @PutMapping("/{activityId}")
     public ResponseEntity<ActivityResponse> updateActivity(@RequestBody ActivityUpdateRequest request, @PathVariable UUID activityId) {
 
-        Activity activity = activityService.updateActivity(request, activityId);
+        Activity activity = activityService.update(request, activityId);
 
         ActivityResponse response = ActivityMapper.mapToResponse(activity);
 

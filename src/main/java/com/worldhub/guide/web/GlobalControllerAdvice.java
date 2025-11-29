@@ -1,6 +1,7 @@
 package com.worldhub.guide.web;
 
 import com.worldhub.guide.exception.DomainException;
+import com.worldhub.guide.exception.ForbiddenOperationException;
 import com.worldhub.guide.exception.ResourceNotFoundException;
 import com.worldhub.guide.web.dto.ErrorResponse;
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.nio.file.AccessDeniedException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -46,6 +48,13 @@ public class GlobalControllerAdvice {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericException(Exception ex) {
+
+        logger.error("Unexpected error occurred: ", ex);
+        return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, "An unexpected error occurred. Please try again later.", null);
+    }
+
+    @ExceptionHandler(ForbiddenOperationException.class)
+    public ResponseEntity<ErrorResponse> handleGenericException(ForbiddenOperationException ex) {
 
         logger.error("Unexpected error occurred: ", ex);
         return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, "An unexpected error occurred. Please try again later.", null);
