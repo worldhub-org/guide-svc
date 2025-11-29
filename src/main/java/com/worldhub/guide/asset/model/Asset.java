@@ -1,8 +1,9 @@
-package com.worldhub.guide.purchase.model;
+package com.worldhub.guide.asset.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
@@ -11,7 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PurchasedGuide {
+public class Asset {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -21,8 +22,12 @@ public class PurchasedGuide {
     private UUID userId;
 
     @Column(nullable = false)
-    private UUID guideId;
+    private String url;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private AssetType assetType;
 
     @Column(nullable = false)
-    private UUID paymentReference;
+    private OffsetDateTime createdOn;
 }

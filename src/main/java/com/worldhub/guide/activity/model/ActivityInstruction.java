@@ -1,4 +1,4 @@
-package com.worldhub.guide.purchase.model;
+package com.worldhub.guide.activity.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,18 +11,19 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PurchasedGuide {
+public class ActivityInstruction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private UUID userId;
+    private InstructionType type;
 
+    @Lob
     @Column(nullable = false)
-    private UUID guideId;
+    private String content;
 
-    @Column(nullable = false)
-    private UUID paymentReference;
+    private Integer orderIndex;
 }
