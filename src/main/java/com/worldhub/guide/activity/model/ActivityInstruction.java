@@ -1,11 +1,8 @@
 package com.worldhub.guide.activity.model;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
@@ -14,23 +11,19 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ActivityExpenseLine {
+public class ActivityInstruction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String title;
+    private InstructionType type;
 
+    @Lob
     @Column(nullable = false)
-    private BigDecimal amount;
+    private String content;
 
-    private String notes;
-
-    @Column(nullable = false)
-    private OffsetDateTime createdOn;
-
-    @Column(nullable = false)
-    private OffsetDateTime updatedOn;
+    private Integer orderIndex;
 }

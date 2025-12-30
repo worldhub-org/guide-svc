@@ -1,6 +1,5 @@
 package com.worldhub.guide.feedback.model;
 
-import com.worldhub.guide.model.Guide;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,11 +17,17 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @Column(nullable = false)
     private UUID userId;
+
     private Integer rate;
+
     private String message;
-    @ManyToOne
-    private Guide guide;
+
+    @Column(nullable = false)
     private OffsetDateTime createdOn;
+
+    @Column(nullable = false)
     private OffsetDateTime updatedOn;
 }

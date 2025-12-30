@@ -1,5 +1,6 @@
 package com.worldhub.guide.model;
 
+import com.worldhub.guide.feedback.model.Review;
 import com.worldhub.guide.section.model.Section;
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,24 +22,61 @@ public class Guide {
     @Id
     @GeneratedValue
     private UUID id;
+
     @Column(nullable = false)
     private UUID ownerId;
+
     @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false)
     private String description;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
+    private List<GuideTag> recommendedFor;
+
     @Column(nullable = false)
     private String city;
+
     @Column(nullable = false)
     private String country;
+
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private CostType costType;
+
     private BigDecimal price;
+
     private Currency currency;
+
     private Double averageRate;
-    @OneToMany(fetch = FetchType.EAGER)
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "guide_id")
     private List<Section> sections;
+
+    @Column(nullable = false)
+    private Integer version;
+
+    @Column(nullable = false)
+    private UUID versionKey;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private GuideStatus status;
+
+    private String systemReviewNote;
+
+    private boolean isDeleted;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "guide_id")
+    private List<Review> reviews;
+
     @Column(nullable = false)
     private OffsetDateTime createdOn;
+
     @Column(nullable = false)
     private OffsetDateTime updatedOn;
 }

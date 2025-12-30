@@ -1,11 +1,8 @@
 package com.worldhub.guide.activity.model;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
@@ -14,23 +11,21 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ActivityExpenseLine {
+public class ActivityContact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(nullable = false)
-    private String title;
+    @Enumerated(EnumType.STRING)
+    private ContactType contactType;
 
     @Column(nullable = false)
-    private BigDecimal amount;
+    private String contactValue;
 
-    private String notes;
+    private String address;
 
-    @Column(nullable = false)
-    private OffsetDateTime createdOn;
-
-    @Column(nullable = false)
-    private OffsetDateTime updatedOn;
+    private Double latitude;
+    private Double longitude;
 }
