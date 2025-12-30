@@ -42,9 +42,9 @@ public class GuidePublicController {
     @GetMapping(path ="/{guideId}", produces = "application/vnd.world-hub-guide.v1+json")
     public ResponseEntity<GuidePreviewResponse> getGuideById(@PathVariable UUID guideId) {
 
-        Guide guide = guideService.getById(guideId);
-        //comment
-        GuidePreviewResponse response = GuideMapper.mapToGuidePreview(guide);
+        Guide guideFromUrl = guideService.getById(guideId);
+        Guide latestPublished = guideService.getLatestPublishedVersionOrThrow(guideFromUrl);
+        GuidePreviewResponse response = GuideMapper.mapToGuidePreview(latestPublished);
 
         return ResponseEntity.ok(response);
     }

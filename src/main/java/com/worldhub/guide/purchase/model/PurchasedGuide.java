@@ -23,6 +23,10 @@ public class PurchasedGuide {
     @Column(nullable = false)
     private UUID guideId;
 
+    // Product-level identity that stays the same across versions of the same guide
+    @Column(nullable = false)
+    private UUID versionKey;
+
     @Column(nullable = false)
     private UUID paymentReference;
 }

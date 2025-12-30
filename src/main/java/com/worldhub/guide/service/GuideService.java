@@ -5,12 +5,14 @@ import com.worldhub.guide.exception.ForbiddenOperationException;
 import com.worldhub.guide.exception.ResourceNotFoundException;
 import com.worldhub.guide.model.CostType;
 import com.worldhub.guide.model.Guide;
+import com.worldhub.guide.model.GuideStatus;
 import com.worldhub.guide.model.GuideTag;
+import com.worldhub.guide.purchase.model.PurchasedGuide;
+import com.worldhub.guide.purchase.repository.PurchasedGuideRepository;
 import com.worldhub.guide.repository.GuideRepository;
 import com.worldhub.guide.section.model.Section;
 import com.worldhub.guide.util.GuideMapper;
-import com.worldhub.guide.web.dto.guide.GuideCreateRequest;
-import com.worldhub.guide.web.dto.guide.GuideUpdateRequest;
+import com.worldhub.guide.web.dto.guide.*;
 import com.worldhub.guide.web.dto.tags.TagResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,9 +21,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class GuideService {
@@ -29,10 +29,12 @@ public class GuideService {
     private static final Logger logger = LoggerFactory.getLogger(GuideService.class);
 
     private final GuideRepository guideRepository;
+    private final PurchasedGuideRepository purchasedGuideRepository;
 
     @Autowired
-    public GuideService(GuideRepository guideRepository) {
+    public GuideService(GuideRepository guideRepository, PurchasedGuideRepository purchasedGuideRepository) {
         this.guideRepository = guideRepository;
+        this.purchasedGuideRepository = purchasedGuideRepository;
     }
 
     public Guide create(GuideCreateRequest request, UUID ownerId) {
@@ -118,8 +120,8 @@ public class GuideService {
     private void validateUpdateRequest(GuideUpdateRequest request, UUID userId, Guide guide) {
 
         if (!guide.getOwnerId().equals(userId)) {
-            logger.warn("User with ID [{}] is not owner of guide: [{}].", userId, guide.getOwnerId());
-            throw new ForbiddenOperationException("User with ID [%s] is not owner if the guide:".formatted(userId));
+            logger.warn("User with ID [{}] is not owner of guide ID [{}].", userId, guide.getId());
+            throw new ForbiddenOperationException("User with ID [%s] is not owner of the guide.".formatted(userId));
         }
 
         if (request.getCostType() == CostType.FREE && (request.getPrice() != null || request.getCurrency() != null)) {
@@ -138,5 +140,68 @@ public class GuideService {
             logger.warn("Price and currency can only be set for PAID guides");
             throw new DomainException("Price and currency can only be set for PAID guides");
         }
+    }
+
+    public CollectionResponse<?> determineResponse(Guide guideFromUrl, UUID userId) {
+
+        boolean isOwner = guideFromUrl.getOwnerId().equals(userId);
+        if (isOwner) {
+            return ownerResponse(guideFromUrl);
+        }
+
+        // For non-owners, always authorize against and render the latest PUBLISHED version
+        Guide latest = getLatestPublishedVersionOrThrow(guideFromUrl);
+
+        boolean isFree = latest.getCostType() == CostType.FREE;
+        boolean isPurchased = hasPurchaseForVersionKey(userId, latest.getVersionKey());
+
+        if (isFree || isPurchased){
+            return fullResponse(latest);
+        }
+
+        return previewResponse(latest);
+    }
+
+    private CollectionResponse<GuideResponse> ownerResponse(Guide guide) {
+
+        List<GuideResponse> response = guideRepository.findAllByVersionKeyOrderByVersionDesc(guide.getVersionKey())
+                .stream()
+                .map(GuideMapper::mapToResponse)
+                .toList();
+
+        return CollectionResponse.<GuideResponse>builder()
+                .collection(response)
+                .build();
+    }
+
+    private CollectionResponse<GuideResponse> fullResponse(Guide guide) {
+
+        GuideResponse response = GuideMapper.mapToResponse(guide);
+        return CollectionResponse.<GuideResponse>builder()
+                .collection(List.of(response))
+                .build();
+    }
+
+    public Guide getLatestPublishedVersionOrThrow(Guide guide) {
+
+        return guideRepository
+                .findTopByVersionKeyAndStatusOrderByVersionDesc(guide.getVersionKey(), GuideStatus.PUBLISHED)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "No published version available for guide " + guide.getId()
+                ));
+    }
+
+
+    private CollectionResponse<GuidePreviewResponse> previewResponse(Guide guide) {
+
+        GuidePreviewResponse preview = GuideMapper.mapToGuidePreview(guide);
+
+        return CollectionResponse.<GuidePreviewResponse>builder()
+                .collection(List.of(preview))
+                .build();
+    }
+
+    private boolean hasPurchaseForVersionKey(UUID userId, UUID versionKey) {
+        return purchasedGuideRepository.findByUserIdAndVersionKey(userId, versionKey).isPresent();
     }
 }

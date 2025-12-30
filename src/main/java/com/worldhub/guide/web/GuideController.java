@@ -6,6 +6,7 @@ import com.worldhub.guide.section.service.SectionService;
 import com.worldhub.guide.util.GuideMapper;
 import com.worldhub.guide.service.GuideService;
 import com.worldhub.guide.util.SectionMapper;
+import com.worldhub.guide.web.dto.guide.CollectionResponse;
 import com.worldhub.guide.web.dto.guide.GuideCreateRequest;
 import com.worldhub.guide.web.dto.guide.GuideResponse;
 import com.worldhub.guide.web.dto.guide.GuideUpdateRequest;
@@ -22,7 +23,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -44,25 +47,33 @@ public class GuideController {
     }
 
     @PostMapping(produces = "application/vnd.world-hub.empty.v1+json")
-    public ResponseEntity<GuideResponse> createGuide(@RequestBody @Valid GuideCreateRequest request,
+    public ResponseEntity<Void> createGuide(@RequestBody @Valid GuideCreateRequest request,
                                                      @AuthenticationPrincipal AuthenticationMetadata metadata) {
 
         UUID ownerId = metadata.getUserId();
 
         Guide guide = guideService.create(request, ownerId);
-        GuideResponse response = GuideMapper.mapToResponse(guide);
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(guide.getId())
+                .toUri();
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        return ResponseEntity
+                .created(location)
+                .build();
     }
 
-    @GetMapping("/{guideId}")
-    public ResponseEntity<GuideResponse> getGuide(@PathVariable UUID guideId) {
+    @GetMapping(path = "/{guideId}", produces = "application/vnd.world-hub.guide-collection.v1+json")
+    public ResponseEntity<CollectionResponse<?>> getGuide(@PathVariable UUID guideId,
+                                                          @AuthenticationPrincipal AuthenticationMetadata metadata) {
 
-
+        UUID userId = metadata.getUserId();
         Guide guide = guideService.getById(guideId);
-        GuideResponse response = GuideMapper.mapToResponse(guide);
 
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+        CollectionResponse<?> response = guideService.determineResponse(guide, userId);
+
+        return ResponseEntity.ok(response);
     }
 
     @Unauthenticated
@@ -92,7 +103,7 @@ public class GuideController {
 
     // POST /guides/{guideId}/sections
     //--only base information with DTO
-    // TODO: Vik, Please elaborate!.......
+    // TODO: Vik, Please elaborate!
     @PostMapping("/{guideId}/sections")
     public ResponseEntity<SectionResponse> createSection(@PathVariable UUID guideId,
                                                          @RequestBody @Valid SectionCreateRequest request,
