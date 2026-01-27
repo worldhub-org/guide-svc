@@ -21,14 +21,16 @@ public class ActivityExpense {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     @Column(nullable = false)
     private CostType costType;
+
     private Currency currency;
+
+    private PaymentMethod paymentMethod;
+
     private BigDecimal totalAmount;
-    @OneToMany(fetch = FetchType.EAGER)
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ActivityExpenseLine> lines;
-    @Column(nullable = false)
-    private OffsetDateTime createdOn;
-    @Column(nullable = false)
-    private OffsetDateTime updatedOn;
 }

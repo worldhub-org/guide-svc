@@ -17,23 +17,52 @@ public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     @Column(nullable = false)
-    private UUID userId;
-    @Column(nullable = false)
-    private String name;
-    private String imageUrl;
+    private String title;
+
     private String description;
+
+    @Column(nullable = false)
+    private String placeName;
+
+    @Column(nullable = false)
+    private String address;
+
+    @Column(nullable = false)
+    private ActivityType type;
+
+    private Double latitude;
+
+    private Double longitude;
+
+    private DurationUnit durationUnit;
+
+    private Double durationValue;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private DayPart bestTimeToDo;
+
+    @Enumerated(EnumType.STRING)
+    private DifficultyLevel difficultyLevel;
+
+    private Integer minPeopleRequired;
+
+    private Integer minAge;
+
     @OneToOne(optional = false)
     private ActivityExpense expense;
-    @Column(nullable = false)
-    private ActivityType activityType;
-    @Column(nullable = false)
-    private DifficultyLevel difficultyLevel;
-    private Integer durationValue;
-    @Column(nullable = false)
-    private DurationUnit durationUnit;
+
+    private String contactPhone;
+
+    private String contactEmail;
+
+    private String officialWebsite;
+
     @Column(nullable = false)
     private OffsetDateTime createdOn;
+
     @Column(nullable = false)
     private OffsetDateTime updatedOn;
 }
