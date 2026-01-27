@@ -1,11 +1,14 @@
 package com.worldhub.guide.section.model;
 
-import com.worldhub.guide.activity.model.Activity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.worldhub.guide.model.Guide;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
 
 @Entity
 @Getter
@@ -18,10 +21,18 @@ public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @Column(nullable = false)
+
+    @ManyToOne(optional = false)
+    private Guide guide;
+
     private String title;
+
     private String description;
-    private String imageUrl;
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Activity> activities;
+
+    private int orderIndex;
+
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    @OrderBy("orderIndex ASC")
+    private List<SectionActivity> activities = new ArrayList<>();
 }

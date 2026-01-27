@@ -1,0 +1,1805 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "ownerId": "771f9211-b30c-42e5-b127-225566778899",
+  "creatorAuthenticator": {
+    "name": "Viktor Aleksandrov",
+    "status": "VERIFIED_EXPERT",
+    "verificationBadges": [
+      "IDENTITY_KYC_PASSED",
+      "LOCATION_HISTORY_MATCH",
+      "SOCIAL_MEDIA_AUDIT"
+    ],
+    "experience": {
+      "relationType": "FREQUENT_VISITOR",
+      "lastVisitDate": "2024-05",
+      "residentSinceYear": null,
+      "visitFrequency": "Twice a year",
+      "totalVisitCount": 6,
+      "tripDurationDays": null,
+      "description": "I have been flying to Ubud every summer since 2018 to lead yoga retreats. I've seen the town evolve and know exactly where the quiet spots still exist."
+    },
+    "creatorVoice": {
+      "bio": "Remote worker and coffee addict obsessed with finding hidden gems.",
+      "tripHighlight": "My favorite routine was the sunrise ridge walk followed by a coconut at Karsa Cafe before the crowds arrived.",
+      "insiderTake": "Ubud is magical but the traffic in the center is a nightmare between 4 PM and 7 PM. This guide helps you navigate around the congestion."
+    },
+    "socialFootprint": {
+      "instagram": "https://instagram.com/travel_expert",
+      "tiktok": "https://tiktok.com/@travel_expert",
+      "youtube": null,
+      "blog": "https://my-bali-blog.com"
+    }
+  },
+  "ownerEmail": "travel-expert@worldhub.com",
+  "title": "5 Days Ubud: Greenery, Culture & Spirit",
+  "shortDescription": "A sensory journey through the emerald-green heart of Bali's cultural capital.",
+  "description": "Nestled among ravines and emerald-green rice paddies, Ubud is the island's cultural and spiritual heartbeat. Here, the air is thick with the scent of incense and tropical blooms, offering a serene escape where the lush jungle canopy meets ancient stone temples. Whether you are seeking the thrill of the forest or the quietude of a hidden yoga shala, Ubud’s greenery provides a restorative backdrop for every traveler.",
+  "status": "PUBLISHED",
+  "version": 4,
+  "destination": "Ubud, Bali",
+  "country": "Indonesia",
+  "costType": "PAID",
+  "price": 15.00,
+  "currency": "USD",
+  "averageRate": 4.9,
+  "createdOn": "2024-05-20T10:00:00+08:00",
+  "updatedOn": "2024-05-21T14:30:00+08:00",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Monkeys and Luwak",
+      "busyness": "MORNING",
+      "estimated_spending": [
+        {
+          "amount_min": 800000,
+          "amount_max": 1200000,
+          "currency": "IDR"
+        }
+      ],
+      "short_description": "Today you will start the day with a cup of hot Luwak coffee in the Jungle and then you will visit the gem of Bali's heart - the sacred monkey forest.",
+      "activities": [
+        {
+          "id": "act-uuid-001",
+          "name": "Taste the Luwak Coffee",
+          "description": "Experience the traditional Balinese process of making 'Kopi Luwak.' Set against a backdrop of steep jungle ravines, you'll sample various local teas and coffees, learning about the fermentation process that makes Luwak coffee famous worldwide.",
+          "type": "FOOD_AND_DRINK",
+          "duration_unit": "HOUR",
+          "duration_value": "3",
+          "best_time_to_do": "MORNING",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Kumulilir",
+            "url": "https://maps.app.goo.gl/PV3ocRKZF226gt5n8",
+            "address": "Jl. Raya Pujung Kaja, Sebatu, Kec. Tegallalang",
+            "coordinates": {
+              "lat": -8.4234,
+              "lng": 115.2891
+            }
+          },
+          "contacts": {
+            "whatsapp": "+6281226968228",
+            "website": "https://kumulilir.com/"
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Arrive before 07:30 AM to secure a table directly overlooking the jungle ravine for the best photos."
+            },
+            {
+              "type": "DONT",
+              "value": "Avoid visiting after 09:00 AM as large tour groups typically arrive then."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Apply high-DEET mosquito repellent to your ankles and arms before entering the shaded spice garden paths."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Standard tea/coffee tasting set",
+              "Spice garden tour"
+            ],
+            "not_included": [
+              "Premium Luwak cup",
+              "Jungle swing photos"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CASH_OR_CARD",
+            "currency": "IDR",
+            "min_cost": 150000,
+            "max_cost": 500000,
+            "avg_cost": 350000,
+            "tipping_policy": "OPTIONAL",
+            "breakdown": [
+              {
+                "item": "Entrance Fee",
+                "value": "150000"
+              },
+              {
+                "item": "A cup of coffee (Variable)",
+                "value": "200000-350000"
+              }
+            ]
+          },
+          "logistics_to_next": {
+            "destination_name": "Sacred Monkey Forest",
+            "distance_km": 8.5,
+            "estimated_time_min": 25,
+            "recommended_mode": "TAXI_APP",
+            "provider_options": [
+              "Grab",
+              "Gojek"
+            ],
+            "estimated_cost_range": {
+              "min": 45000,
+              "max": 60000,
+              "currency": "IDR"
+            },
+            "note": "Internet signal can be weak here; connect to Kumulilir Wi-Fi to book your ride."
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-001a",
+              "type": "ATTRACTION",
+              "name": "Alas Harum Swing",
+              "priceTier": "EXPENSIVE",
+              "paymentMethod": "CARD_ACCEPTED",
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "If you want more adrenaline after coffee, this is right next door.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": null,
+              "location": {
+                "address": "Jl. Raya Tegallalang",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/swing",
+                "coordinates": {
+                  "lat": -8.4240,
+                  "lng": 115.2895
+                },
+                "accessNote": "5 min walk south from Kumulilir."
+              },
+              "specifications": [
+                {
+                  "key": "INSTAGRAM_SPOTS",
+                  "value": "HIGH"
+                },
+                {
+                  "key": "DRESS_RENTAL",
+                  "value": "AVAILABLE"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Super Extreme Swing"
+                ],
+                "avoid": [
+                  "Buying photos (Use your own phone)"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "act-uuid-002",
+          "name": "Sacred Monkey Forest Sanctuary",
+          "description": "A nature reserve and temple complex home to over 1,200 long-tailed macaques. The forest is considered sacred and provides a glimpse into the Balinese philosophy of Tri Hita Karana.",
+          "type": "CULTURAL",
+          "duration_unit": "HOUR",
+          "duration_value": "2",
+          "best_time_to_do": "LATE_MORNING",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Sacred Monkey Forest",
+            "url": "https://maps.app.goo.gl/PV3ocRKZF226gt5n8",
+            "address": "Jl. Monkey Forest, Ubud",
+            "coordinates": {
+              "lat": -8.5194,
+              "lng": 115.2632
+            }
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Walk slowly and stay on the designated paths; observe the monkeys from a respectful distance."
+            },
+            {
+              "type": "DONT",
+              "value": "Do not bring plastic bags, loose sunglasses, or snacks, as the monkeys are highly skilled at snatching loose items."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Avoid making direct eye contact or showing your teeth (smiling) at the monkeys."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Access to all 3 ancient temples",
+              "Forest trail access"
+            ],
+            "not_included": [
+              "Monkey selfies with staff assistance",
+              "Private guide"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CREDIT_CARD",
+            "currency": "IDR",
+            "min_cost": 80000,
+            "max_cost": 100000,
+            "avg_cost": 80000,
+            "tipping_policy": "NOT_APPLICABLE",
+            "breakdown": [
+              {
+                "item": "Adult Entrance Ticket (Weekday)",
+                "value": "80000"
+              },
+              {
+                "item": "Adult Entrance Ticket (Weekend)",
+                "value": "100000"
+              }
+            ]
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-002a",
+              "type": "CAFE",
+              "name": "Pison Ubud",
+              "priceTier": "MODERATE",
+              "paymentMethod": "CASH_AND_CARD",
+
+              "cuisineTypes": ["MODERN_ASIAN", "WESTERN_FUSION"],
+              "dietaryOptions": ["VEGAN_FRIENDLY", "GLUTEN_FREE_OPTIONS"],
+
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "Go here immediately after the forest. It is the closest spot with strong AC.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": "Arrive before 11 AM to get a booth, otherwise expect a 15 min wait.",
+              "location": {
+                "address": "Jl. Hanoman No. 10X",
+                "googleMapsLink": "http://maps.google.com/",
+                "coordinates": {
+                  "lat": -8.51,
+                  "lng": 115.26
+                },
+                "accessNote": "5 min walk via the small alley (avoid main road)."
+              },
+              "specifications": [
+                {
+                  "key": "AC_STATUS",
+                  "value": "FULL_AC"
+                },
+                {
+                  "key": "WIFI",
+                  "value": "HIGH_SPEED"
+                },
+                {
+                  "key": "LAPTOPS",
+                  "value": "ALLOWED"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Espresso Avocado",
+                  "Squid Ink Fried Rice"
+                ],
+                "avoid": [
+                  "The Burgers (Dry bun)"
+                ]
+              }
+            },
+            {
+              "id": "amenity-uuid-002b",
+              "type": "SUPERMARKET",
+              "name": "Coco Supermarket",
+              "priceTier": "CHEAP",
+              "paymentMethod": "CASH_AND_CARD",
+              "relationType": "PRE_ACTIVITY",
+              "relationNote": "Stop here BEFORE the forest. Water inside costs 4x more.",
+              "reservationPolicy": "NOT_APPLICABLE",
+              "reservationNote": null,
+              "location": {
+                "address": "Jl. Raya Pengosekan",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/coco",
+                "coordinates": {
+                  "lat": -8.52,
+                  "lng": 115.26
+                },
+                "accessNote": "Right next to the parking lot entrance."
+              },
+              "specifications": [
+                {
+                  "key": "ATM",
+                  "value": "ON_SITE"
+                },
+                {
+                  "key": "PHARMACY",
+                  "value": "ATTACHED"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [],
+                "avoid": [
+                  "Sunscreen (Overpriced)"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Tegallalang Rice Terrace + Cretya Ubud + Ubud Palace",
+      "busyness": "FULL_DAY",
+      "estimated_spending": [
+        {
+          "amount_min": 500000,
+          "amount_max": 1500000,
+          "currency": "IDR"
+        }
+      ],
+      "short_description": "Witness the iconic UNESCO-listed terraced landscapes followed by a luxury dip in a jungle club, ending with the architectural grandeur of the Royal Palace.",
+      "activities": [
+        {
+          "id": "act-uuid-003",
+          "name": "Tegallalang & Cretya Ubud",
+          "description": "Walk through the tiered rice landscapes and then transition into Cretya, a luxury day club featuring tiered pools overlooking the emerald valley.",
+          "type": "LEISURE",
+          "duration_unit": "HOUR",
+          "duration_value": "5",
+          "best_time_to_do": "MORNING",
+          "difficulty_level": "MEDIUM",
+          "min_people_required": 1,
+          "min_age_required": 18,
+          "location": {
+            "name": "Alas Harum / Cretya Ubud",
+            "url": "https://maps.google.com/?q=Cretya+Ubud",
+            "address": "Jl. Raya Tegallalang",
+            "coordinates": {
+              "lat": -8.4357,
+              "lng": 115.2796
+            }
+          },
+          "contacts": {
+            "whatsapp": "+6285929872693",
+            "website": "https://cretyaubud.com/"
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Wear proper hiking sandals or sneakers for the rice terrace walk as the dirt paths can be slippery and steep."
+            },
+            {
+              "type": "DONT",
+              "value": "Don't forget to pack a dedicated swim-bag; while towels are available for rent, having your own is more convenient."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Stay extremely hydrated; the humidity within the deep rice terraces can lead to quick exhaustion."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Rice terrace walking paths",
+              "Access to standard pool areas"
+            ],
+            "not_included": [
+              "Pool bed rental",
+              "Towel rental fee",
+              "Jungle Swing rides"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CREDIT_CARD",
+            "currency": "IDR",
+            "min_cost": 50000,
+            "max_cost": 1000000,
+            "avg_cost": 450000,
+            "tipping_policy": "INCLUDED_IN_SERVICE_CHARGE",
+            "breakdown": [
+              {
+                "item": "Entrance Fee Only",
+                "value": "50000"
+              },
+              {
+                "item": "Cretya Minimum Spend (Daybed)",
+                "value": "500000+"
+              }
+            ]
+          },
+          "logistics_to_next": {
+            "destination_name": "Ubud Palace",
+            "distance_km": 9.0,
+            "estimated_time_min": 30,
+            "recommended_mode": "TAXI_APP",
+            "provider_options": [
+              "Grab",
+              "Gojek"
+            ],
+            "estimated_cost_range": {
+              "min": 60000,
+              "max": 80000,
+              "currency": "IDR"
+            }
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-003a",
+              "type": "CAFE",
+              "name": "Tis Cafe",
+              "priceTier": "MODERATE",
+              "paymentMethod": "CASH_AND_CARD",
+
+              "cuisineTypes": ["INDONESIAN", "WESTERN"],
+              "dietaryOptions": ["VEGAN_FRIENDLY"],
+
+              "relationType": "ANYTIME",
+              "relationNote": "A great alternative if Cretya is too crowded/loud. It has the same view.",
+              "reservationPolicy": "RECOMMENDED",
+              "reservationNote": "Book the 'Bird Nest' table for photos.",
+              "location": {
+                "address": "Jl. Raya Tegallalang",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/tis",
+                "coordinates": {
+                  "lat": -8.4360,
+                  "lng": 115.2790
+                },
+                "accessNote": "Located just 100m south of Alas Harum entrance."
+              },
+              "specifications": [
+                {
+                  "key": "VIEW",
+                  "value": "RICE_TERRACE"
+                },
+                {
+                  "key": "POOL",
+                  "value": "INFINITY_ACCESS"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Floating Breakfast"
+                ],
+                "avoid": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "act-uuid-004",
+          "name": "Ubud Palace (Puri Saren Agung)",
+          "description": "The official residence of the royal family of Ubud, featuring beautiful Balinese architecture and stone carvings.",
+          "type": "CULTURAL",
+          "duration_unit": "HOUR",
+          "duration_value": "1",
+          "best_time_to_do": "AFTERNOON",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Ubud Palace",
+            "url": "https://maps.google.com/?q=Pura+Taman+Saraswati",
+            "address": "Jl. Raya Ubud No.8",
+            "coordinates": {
+              "lat": -8.5069,
+              "lng": 115.2625
+            }
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Dress modestly (shoulders covered) out of respect for the royal family who still resides in parts of the complex."
+            },
+            {
+              "type": "DONT",
+              "value": "Avoid the front gates during the 7:00 PM dance performance setup unless you have a ticket."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Be mindful of high door thresholds which are common in Balinese architecture to prevent tripping."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Public courtyard access",
+              "Architecture photography"
+            ],
+            "not_included": [
+              "Evening dance show ticket",
+              "Private guided tour"
+            ]
+          },
+          "price_config": {
+            "type": "FREE",
+            "method": "CASH",
+            "currency": "IDR",
+            "min_cost": 0,
+            "max_cost": 0,
+            "avg_cost": 0,
+            "tipping_policy": "NOT_APPLICABLE",
+            "breakdown": [
+              {
+                "item": "Entry",
+                "value": "0"
+              }
+            ]
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-004a",
+              "type": "BAKERY",
+              "name": "Daily Baguette",
+              "priceTier": "MODERATE",
+              "paymentMethod": "CASH_AND_CARD",
+
+              "cuisineTypes": ["FRENCH_BAKERY"],
+              "dietaryOptions": ["VEGETARIAN_FRIENDLY"],
+
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "Best croissants in Ubud if you need a quick snack after the Palace.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": null,
+              "location": {
+                "address": "Jl. Raya Ubud No. 27",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/bakery",
+                "coordinates": {
+                  "lat": -8.5065,
+                  "lng": 115.2630
+                },
+                "accessNote": "Across the street, 50m east."
+              },
+              "specifications": [
+                {
+                  "key": "AC_STATUS",
+                  "value": "FULL_AC"
+                },
+                {
+                  "key": "WIFI",
+                  "value": "FAST"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Almond Croissant",
+                  "Eclairs"
+                ],
+                "avoid": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Lotus Cafe + Ubud Water Palace + Ubud Art Market",
+      "busyness": "MODERATE",
+      "estimated_spending": [
+        {
+          "amount_min": 400000,
+          "amount_max": 800000,
+          "currency": "IDR"
+        }
+      ],
+      "short_description": "A day of cultural immersion focusing on Balinese aesthetics, pond views, and local artisan crafts.",
+      "activities": [
+        {
+          "id": "act-uuid-005",
+          "name": "Lotus Cafe & Water Palace",
+          "description": "Pura Taman Saraswati is famous for its stunning lotus pond. The adjacent Lotus Cafe offers the best seats to admire the temple's intricate stone carvings.",
+          "type": "FOOD_AND_DRINK",
+          "duration_unit": "HOUR",
+          "duration_value": "2",
+          "best_time_to_do": "LUNCH",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Pura Taman Saraswati",
+            "url": "https://maps.google.com/?q=Uma+Anyar+Waterfall",
+            "address": "Jl. Raya Ubud",
+            "coordinates": {
+              "lat": -8.5072,
+              "lng": 115.2610
+            }
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Try the traditional Balinese 'Klepon' (rice cakes) while watching the breeze move the lotuses."
+            },
+            {
+              "type": "DONT",
+              "value": "Do not enter the inner temple area without a traditional Balinese sarong and sash."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Watch your step on the bridge over the lotus pond; the stone can be uneven and slippery when wet."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Temple courtyard views",
+              "Lotus pond photography access"
+            ],
+            "not_included": [
+              "Main course meals",
+              "Alcoholic beverages"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CREDIT_CARD",
+            "currency": "IDR",
+            "min_cost": 60000,
+            "max_cost": 500000,
+            "avg_cost": 310000,
+            "tipping_policy": "OPTIONAL",
+            "breakdown": [
+              {
+                "item": "Temple Entry Fee",
+                "value": "60000"
+              },
+              {
+                "item": "Lunch at Lotus Cafe",
+                "value": "250000"
+              }
+            ]
+          },
+          "logistics_to_next": {
+            "destination_name": "Ubud Art Market",
+            "distance_km": 0.2,
+            "estimated_time_min": 5,
+            "recommended_mode": "WALKING",
+            "estimated_cost_range": {
+              "min": 0,
+              "max": 0,
+              "currency": "IDR"
+            },
+            "note": "Just walk east along the main road; it is right across from the Palace."
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-005a",
+              "type": "CAFE",
+              "name": "Lazy Cats Cafe",
+              "priceTier": "MODERATE",
+              "paymentMethod": "CASH_AND_CARD",
+
+              "cuisineTypes": ["VEGETARIAN_FUSION", "WESTERN"],
+              "dietaryOptions": ["VEGAN_FRIENDLY", "VEGETARIAN_ONLY"],
+
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "A very 'Ubud' hipster spot if Lotus Cafe is too crowded.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": null,
+              "location": {
+                "address": "Jl. Raya Ubud No. 11",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/lazycats",
+                "coordinates": {
+                  "lat": -8.5060,
+                  "lng": 115.2590
+                },
+                "accessNote": "2 min walk west from the temple."
+              },
+              "specifications": [
+                {
+                  "key": "VIBE",
+                  "value": "ARTISTIC"
+                },
+                {
+                  "key": "FOOD_TYPE",
+                  "value": "VEGETARIAN"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Hummus Plate",
+                  "Carrot Cake"
+                ],
+                "avoid": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "act-uuid-006",
+          "name": "Ubud Art Market",
+          "description": "A vibrant market where you can find handmade silk scarves, woven bags, and artisan souvenirs.",
+          "type": "SHOPPING",
+          "duration_unit": "HOUR",
+          "duration_value": "2",
+          "best_time_to_do": "MORNING",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Ubud Art Market",
+            "url": "http://googleusercontent.com/maps.google.com/market",
+            "address": "Jl. Raya Ubud No.35",
+            "coordinates": {
+              "lat": -8.5075,
+              "lng": 115.2628
+            }
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Engage in friendly bargaining; it is expected. Aim for roughly 50-60% of the initial quoted price."
+            },
+            {
+              "type": "DONT",
+              "value": "Don't start a negotiation if you have no real intention of buying, as it's considered impolite to the vendors."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Keep your wallet or phone in a front pocket or a crossbody bag due to the high density of crowds."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Market exploration access"
+            ],
+            "not_included": [
+              "Purchased goods",
+              "Shipping services"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CASH",
+            "currency": "IDR",
+            "min_cost": 0,
+            "max_cost": 1000000,
+            "avg_cost": 300000,
+            "tipping_policy": "NOT_APPLICABLE",
+            "breakdown": [
+              {
+                "item": "Souvenir Allowance (Variable)",
+                "value": "300000"
+              }
+            ]
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-006a",
+              "type": "CAFE",
+              "name": "Seniman Coffee Studio",
+              "priceTier": "MODERATE",
+              "paymentMethod": "CASH_AND_CARD",
+
+              "cuisineTypes": ["SPECIALTY_COFFEE", "CAFE_FOOD"],
+              "dietaryOptions": ["VEGAN_FRIENDLY", "GLUTEN_FREE_OPTIONS"],
+
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "World-class coffee and a quiet place to sit after bargaining.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": null,
+              "location": {
+                "address": "Jl. Sri Wedari No. 5",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/seniman",
+                "coordinates": {
+                  "lat": -8.5080,
+                  "lng": 115.2640
+                },
+                "accessNote": "5 min walk up the side street."
+              },
+              "specifications": [
+                {
+                  "key": "COFFEE_QUALITY",
+                  "value": "SPECIALTY"
+                },
+                {
+                  "key": "AC_STATUS",
+                  "value": "PARTIAL_AC"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Cold Brew Tasting Flight"
+                ],
+                "avoid": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Uma Anyar Waterfall + Bali Zoo",
+      "busyness": "FULL_DAY",
+      "estimated_spending": [
+        {
+          "amount_min": 1500000,
+          "amount_max": 2000000,
+          "currency": "IDR"
+        }
+      ],
+      "short_description": "Venture outside the center to discover a hidden gem waterfall followed by an interactive wildlife experience.",
+      "activities": [
+        {
+          "id": "act-uuid-007",
+          "name": "Uma Anyar Waterfall",
+          "description": "A wide, gentle waterfall that is much less crowded than the famous Tegenungan, perfect for a morning dip.",
+          "type": "NATURE",
+          "duration_unit": "HOUR",
+          "duration_value": "2",
+          "best_time_to_do": "MORNING",
+          "difficulty_level": "MEDIUM",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Uma Anyar Waterfall",
+            "url": "https://www.google.com/search?q=https://maps.google.com/%3Fq%3DCretya%2BUbud",
+            "address": "Kemenuh Village, Sukawati",
+            "coordinates": {
+              "lat": -8.5583,
+              "lng": 115.2890
+            }
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Bring a dry-bag for your camera and phone; the mist from the falls is quite strong and travels far."
+            },
+            {
+              "type": "DONT",
+              "value": "Don't leave any trash or plastic behind; this is a local community-managed 'hidden gem' spot."
+            },
+            {
+              "type": "SAFETY",
+              "value": "The rocks near the base are covered in slippery moss. Use the natural handholds when stepping into the water."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Waterfall access",
+              "Basic changing room access"
+            ],
+            "not_included": [
+              "Towel rental",
+              "Locker storage"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CASH",
+            "currency": "IDR",
+            "min_cost": 20000,
+            "max_cost": 50000,
+            "avg_cost": 20000,
+            "tipping_policy": "NOT_APPLICABLE",
+            "breakdown": [
+              {
+                "item": "Entrance Fee",
+                "value": "20000"
+              },
+              {
+                "item": "Locker (Optional)",
+                "value": "10000"
+              }
+            ]
+          },
+          "logistics_to_next": {
+            "destination_name": "Bali Zoo",
+            "distance_km": 5.0,
+            "estimated_time_min": 15,
+            "recommended_mode": "PRIVATE_DRIVER",
+            "estimated_cost_range": {
+              "min": 500000,
+              "max": 600000,
+              "currency": "IDR"
+            },
+            "note": "We recommend hiring a driver for the full day (8 hours) for approx 500k IDR as Grab is hard to find at the waterfall."
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-007a",
+              "type": "RESTAURANT",
+              "name": "D'Yoni Warung",
+              "priceTier": "CHEAP",
+              "paymentMethod": "CASH_ONLY",
+
+              "cuisineTypes": ["LOCAL_INDONESIAN"],
+              "dietaryOptions": ["HALAL", "VEGETARIAN_OPTIONS"],
+
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "Cheap, authentic lunch spot right at the top of the waterfall stairs.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": null,
+              "location": {
+                "address": "Kemenuh",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/dyoni",
+                "coordinates": {
+                  "lat": -8.5580,
+                  "lng": 115.2890
+                },
+                "accessNote": "Located at the parking area."
+              },
+              "specifications": [
+                {
+                  "key": "VIEW",
+                  "value": "WATERFALL_TOP"
+                },
+                {
+                  "key": "FOOD",
+                  "value": "LOCAL_INDONESIAN"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Nasi Goreng",
+                  "Fresh Coconut"
+                ],
+                "avoid": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "act-uuid-008",
+          "name": "Bali Zoo",
+          "description": "An interactive zoo offering up-close animal encounters like Elephant Mud Fun and Breakfast with Orangutans.",
+          "type": "NATURE",
+          "duration_unit": "HOUR",
+          "duration_value": "4",
+          "best_time_to_do": "AFTERNOON",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Bali Zoo",
+            "url": "https://www.google.com/search?q=https://maps.google.com/%3Fq%3DPura%2BTaman%2BSaraswati",
+            "address": "Jl. Raya Singapadu",
+            "coordinates": {
+              "lat": -8.5912,
+              "lng": 115.2661
+            }
+          },
+          "contacts": {
+            "whatsapp": "+62361294939",
+            "website": "https://www.bali-zoo.com/"
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Check the schedule for animal education shows upon entry to maximize your time."
+            },
+            {
+              "type": "DONT",
+              "value": "Do not feed the animals with outside food; only use the specific feed provided by the zoo staff."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Always use the provided hand-sanitizing stations immediately after any animal interaction."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "General zoo admission",
+              "Animal education shows",
+              "Jungle Splash waterplay access"
+            ],
+            "not_included": [
+              "Animal feeding kits",
+              "Breakfast with Orangutans package",
+              "Elephant Mud Fun package"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CREDIT_CARD",
+            "currency": "IDR",
+            "min_cost": 450000,
+            "max_cost": 1200000,
+            "avg_cost": 950000,
+            "tipping_policy": "NOT_APPLICABLE",
+            "breakdown": [
+              {
+                "item": "Standard Adult Ticket",
+                "value": "450000"
+              },
+              {
+                "item": "Elephant Mud Fun",
+                "value": "1200000"
+              }
+            ]
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-008a",
+              "type": "SPA",
+              "name": "Sanctoo Spa & Wellness",
+              "priceTier": "LUXURY",
+              "paymentMethod": "CARD_ACCEPTED",
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "Located adjacent to the Zoo, perfect if you are tired after walking.",
+              "reservationPolicy": "REQUIRED",
+              "reservationNote": "Book in advance.",
+              "location": {
+                "address": "Jl. Raya Singapadu",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/sanctoo",
+                "coordinates": {
+                  "lat": -8.5915,
+                  "lng": 115.2665
+                },
+                "accessNote": "Walkable from Zoo exit."
+              },
+              "specifications": [
+                {
+                  "key": "VIBE",
+                  "value": "RELAXING"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Warm Stone Massage"
+                ],
+                "avoid": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Campuhan Ridge Walk & Spiritual Healing",
+      "busyness": "RELAXED",
+      "estimated_spending": [
+        {
+          "amount_min": 400000,
+          "amount_max": 700000,
+          "currency": "IDR"
+        }
+      ],
+      "short_description": "Finish your journey with scenic views and a traditional Balinese spa experience to restore your spirit before departure.",
+      "activities": [
+        {
+          "id": "act-uuid-009",
+          "name": "Campuhan Ridge Walk",
+          "description": "A scenic, paved trekking path along a hilltop ridge, offering lush valley views on both sides. It is one of the most famous sunrise spots in Ubud.",
+          "type": "NATURE",
+          "duration_unit": "HOUR",
+          "duration_value": "1.5",
+          "best_time_to_do": "SUNRISE",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 0,
+          "location": {
+            "name": "Campuhan Ridge Start Point",
+            "url": "https://www.google.com/maps/dir/?api=1&destination=...",
+            "address": "Jl. Raya Campuhan, Sayan",
+            "coordinates": {
+              "lat": -8.5035,
+              "lng": 115.2536
+            }
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Start your walk at 06:00 AM to catch the sunrise and avoid the harsh heat."
+            },
+            {
+              "type": "DONT",
+              "value": "Do not bring a drone if you want to fly it low; locals may complain as it disturbs the peace."
+            },
+            {
+              "type": "SAFETY",
+              "value": "Bring water; there are no shops on the ridge itself until you reach the Karsa Cafe at the end."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Walking trail access",
+              "Scenic views"
+            ],
+            "not_included": [
+              "Drinks at Karsa Cafe"
+            ]
+          },
+          "price_config": {
+            "type": "FREE",
+            "method": "CASH",
+            "currency": "IDR",
+            "min_cost": 0,
+            "max_cost": 0,
+            "avg_cost": 0,
+            "tipping_policy": "NOT_APPLICABLE",
+            "breakdown": [
+              {
+                "item": "Entry",
+                "value": "0"
+              }
+            ]
+          },
+          "logistics_to_next": {
+            "destination_name": "Karsa Spa",
+            "distance_km": 0.1,
+            "estimated_time_min": 2,
+            "recommended_mode": "WALKING",
+            "estimated_cost_range": {
+              "min": 0,
+              "max": 0,
+              "currency": "IDR"
+            },
+            "note": "Karsa Spa is located exactly at the end of the Ridge Walk trail."
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-009a",
+              "type": "CAFE",
+              "name": "Karsa Cafe",
+              "priceTier": "CHEAP",
+              "paymentMethod": "CASH_AND_CARD",
+
+              "cuisineTypes": ["INDONESIAN", "HEALTHY"],
+              "dietaryOptions": ["VEGETARIAN_FRIENDLY", "FRESH_JUICE"],
+
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "This is the reward at the end of the hike. Great smoothies.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": null,
+              "location": {
+                "address": "Jl. Bangkiang Sidem",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/karsacafe",
+                "coordinates": {
+                  "lat": -8.4975,
+                  "lng": 115.2510
+                },
+                "accessNote": "Located in the huts above the spa."
+              },
+              "specifications": [
+                {
+                  "key": "VIEW",
+                  "value": "RICE_FIELDS"
+                },
+                {
+                  "key": "WIFI",
+                  "value": "SLOW"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [
+                  "Watermelon Juice",
+                  "Nasi Goreng"
+                ],
+                "avoid": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "act-uuid-010",
+          "name": "Karsa Spa",
+          "description": "Located at the end of the Ridge Walk among rice paddies, this spa is famous for its Reiki healing massage and flower baths.",
+          "type": "WELLNESS",
+          "duration_unit": "HOUR",
+          "duration_value": "2",
+          "best_time_to_do": "MORNING",
+          "difficulty_level": "EASY",
+          "min_people_required": 1,
+          "min_age_required": 12,
+          "location": {
+            "name": "Karsa Spa",
+            "url": "https://www.google.com/search?q=https://maps.google.com/%3Fq%3DUma%2BAnyar%2BWaterfall",
+            "address": "Jl. Bangkiang Sidem",
+            "coordinates": {
+              "lat": -8.4975,
+              "lng": 115.2510
+            }
+          },
+          "contacts": {
+            "whatsapp": "+6281353392013",
+            "website": "http://karsaspa.com/"
+          },
+          "instructions": [
+            {
+              "type": "DO",
+              "value": "Book at least 1 week in advance; this is one of the most popular spas in Ubud."
+            },
+            {
+              "type": "DONT",
+              "value": "Don't be late for your appointment, or your treatment time will be shortened."
+            }
+          ],
+          "inclusions": {
+            "included": [
+              "Towel",
+              "Shower access",
+              "Welcome drink"
+            ],
+            "not_included": [
+              "Transport back to town"
+            ]
+          },
+          "price_config": {
+            "type": "PAID",
+            "method": "CASH_OR_CARD",
+            "currency": "IDR",
+            "min_cost": 300000,
+            "max_cost": 700000,
+            "avg_cost": 400000,
+            "tipping_policy": "OPTIONAL",
+            "breakdown": [
+              {
+                "item": "Traditional Massage (60m)",
+                "value": "300000"
+              },
+              {
+                "item": "Deep Tissue + Flower Bath",
+                "value": "600000"
+              }
+            ]
+          },
+          "nearbyAmenities": [
+            {
+              "id": "amenity-uuid-010a",
+              "type": "TRANSPORT_HUB",
+              "name": "Bangkiang Sidem Taxi Stand",
+              "priceTier": "MODERATE",
+              "paymentMethod": "CASH_ONLY",
+              "relationType": "POST_ACTIVITY",
+              "relationNote": "Grab/Gojek often refuses to pick up here. Use the local drivers stand.",
+              "reservationPolicy": "WALK_IN_ONLY",
+              "reservationNote": null,
+              "location": {
+                "address": "Jl. Bangkiang Sidem",
+                "googleMapsLink": "http://googleusercontent.com/maps.google.com/taxi",
+                "coordinates": {
+                  "lat": -8.4980,
+                  "lng": 115.2515
+                },
+                "accessNote": "Just outside the spa gate."
+              },
+              "specifications": [
+                {
+                  "key": "TYPE",
+                  "value": "LOCAL_TAXI"
+                },
+                {
+                  "key": "PRICE_NEGOTIATION",
+                  "value": "REQUIRED"
+                }
+              ],
+              "recommendations": {
+                "mustTry": [],
+                "avoid": [
+                  "Paying first price (Bargain down)"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "accommodations": [
+    {
+      "id": "acc-uuid-888",
+      "name": "Bisma Cottages Ubud",
+      "type": "HOTEL_ROOM",
+      "status": "VERIFIED_STAY",
+      "location": {
+        "address": "Jl. Bisma No. 35, Ubud",
+        "googleMapsLink": "https://maps.app.goo.gl/xyz123",
+        "coordinates": {
+          "lat": -8.5123,
+          "lng": 115.2634
+        }
+      },
+      "tripContext": {
+        "recommendedForPeriod": "DAYS",
+        "recommendedForDays": [
+          1,
+          2,
+          3
+        ],
+        "note": "Strategic base for Central Ubud walking activities."
+      },
+      "pricing": {
+        "currency": "USD",
+        "averageDailyRate": 85.00,
+        "tier": "MID_RANGE",
+        "note": "Price paid in Shoulder Season (May). Expect +30% in August."
+      },
+      "creatorExperience": {
+        "lastStayedDate": "2024-05-15",
+        "stayDurationNights": 4,
+        "stayType": "SOLO",
+        "tripPurpose": "WORKCATION"
+      },
+      "bookingChannels": [
+        {
+          "type": "DIRECT",
+          "value": "+6281234567890",
+          "label": "Contact Owner (Wayan)",
+          "notes": "Often gives 10% discount for cash payments."
+        },
+        {
+          "type": "PLATFORM",
+          "service": "BOOKING_COM",
+          "value": "https://booking.com/hotel/...",
+          "label": "Check Availability",
+          "notes": null
+        }
+      ],
+      "insights": [
+        {
+          "type": "ROOM_ADVICE",
+          "title": "Best Room Choice",
+          "content": "Request cottages 5 or 6 on the second floor. Ground floor units lack privacy."
+        },
+        {
+          "type": "WARNING",
+          "title": "The Catch",
+          "content": "Access road is too narrow for large SUVs. You must walk the last 50m."
+        },
+        {
+          "type": "FOOD_DRINK",
+          "title": "Breakfast Verdict",
+          "content": "Skip the hotel breakfast. Go to 'Pison' next door."
+        },
+        {
+          "type": "WORK_SETUP",
+          "title": "For Nomads",
+          "content": "50Mbps WiFi confirmed. Proper ergonomic desk available in room."
+        }
+      ],
+      "segments": [
+        "DIGITAL_NOMAD",
+        "COUPLES",
+        "NO_KIDS"
+      ],
+      "features": [
+        {
+          "key": "WIFI_SPEED",
+          "value": "50 Mbps"
+        },
+        {
+          "key": "POWER_BACKUP",
+          "value": "Yes"
+        },
+        {
+          "key": "POOL",
+          "value": "Shared"
+        },
+        {
+          "key": "AC",
+          "value": "Split Unit"
+        },
+        {
+          "key": "LAUNDRY",
+          "value": "There is no laundry services"
+        },
+        {
+          "key": "KITCHEN",
+          "value": "Big kitchen in every room"
+        }
+      ]
+    }
+  ],
+  "logistics": {
+    "connectivity": {
+      "id": "conn-bali-esim",
+      "name": "Tourist eSIM",
+      "type": "ESIM",
+      "acquisitionChannel": "DIGITAL",
+      "cost": {
+        "amount": 25.00,
+        "currency": "USD",
+        "billingFrequency": "ONE_TIME"
+      },
+      "dataAllowance": {
+        "quotaType": "CAPPED",
+        "limitGB": 25
+      },
+      "purchaseAction": {
+        "channel": "WEBSITE",
+        "name": "Airalo Indonesia",
+        "value": "https://www.airalo.com/indonesia-esim",
+        "actionLabel": "Buy eSIM Now",
+        "promoCode": "WORLDHUB10",
+        "instruction": "Download the app to track your data usage."
+      },
+      "note": "Buy online 1 day before flight. Physical SIMs at the airport are 3x the price ($35 vs $10)."
+    },
+    "digitalTools": [
+      {
+        "id": "tool-gojek",
+        "name": "Gojek",
+        "type": "MOBILE_APP",
+        "category": "TRANSPORT_AND_FOOD",
+        "platforms": ["iOS", "Android"],
+        "setupStage": "BEFORE_ARRIVAL",
+        "accessLink": "https://gojek.link/app",
+        "description": "The Super-App for Bali. Use it for scooter taxis, food delivery, and payments.",
+        "usageNote": "Requires SMS verification. Install while you have your home SIM active."
+      },
+      {
+        "id": "tool-whatsapp",
+        "name": "WhatsApp",
+        "type": "MOBILE_APP",
+        "category": "COMMUNICATION",
+        "platforms": ["iOS", "Android"],
+        "setupStage": "ANYTIME",
+        "accessLink": "https://whatsapp.com",
+        "description": "Primary communication for hotels, drivers, and restaurant bookings.",
+        "usageNote": "Set a profile photo; local businesses trust you more."
+      },
+      {
+        "id": "tool-vpn",
+        "name": "ExpressVPN",
+        "type": "MOBILE_APP",
+        "category": "INTERNET_UTILITY",
+        "platforms": ["iOS", "Android", "Mac"],
+        "setupStage": "BEFORE_ARRIVAL",
+        "accessLink": "https://expressvpn.com",
+        "description": "Mandatory for accessing Reddit and Vimeo which are blocked in Indonesia.",
+        "usageNote": "Download before arrival; VPN websites are often blocked inside the country."
+      },
+      {
+        "id": "tool-visa-group",
+        "name": "Bali Visa Advice",
+        "type": "COMMUNITY_GROUP",
+        "category": "LEGAL_SUPPORT",
+        "platforms": ["FACEBOOK"],
+        "setupStage": "ANYTIME",
+        "accessLink": "https://facebook.com/groups/balivisa",
+        "description": "Reliable community for visa extension questions.",
+        "usageNote": "Search history before posting; admins are strict."
+      }
+    ],
+    "mobility": {
+      "trafficContext": {
+        "driveSide": "LEFT",
+        "congestionLevel": "SEVERE",
+        "rushHourWindows": ["08:00-10:00", "16:00-19:00"],
+        "localEtiquette": "Honk lightly when overtaking to warn drivers. Don't honk in anger.",
+        "enforcementAlert": {
+          "severity": "HIGH",
+          "topic": "Tourist Police Raids",
+          "note": "Police actively target tourists without helmets or shirts in Canggu/Ubud. Fine: 1M IDR ($65)."
+        }
+      },
+      "options": [
+        {
+          "id": "mob-001",
+          "name": "Scooter Rental",
+          "type": "PRIVATE_RENTAL",
+          "priority": "PRIMARY",
+          "costStructure": {
+            "amount": 6.00,
+            "currency": "USD",
+            "billingFrequency": "PER_DAY"
+          },
+          "requirements": {
+            "license": "IDP_MOTORCYCLE_CLASS",
+            "safetyGear": "HELMET_MANDATORY"
+          },
+          "description": "The fastest way to beat traffic. Only for experienced riders.",
+          "riskNote": "If you crash without a license, your insurance will NOT cover you.",
+          "bookingSource": {
+            "channel": "WEBSITE",
+            "name": "Bikago",
+            "value": "https://bikago.com",
+            "actionLabel": "Book Online",
+            "note": "They deliver the bike to your hotel for free. Bikes are insured."
+          }
+        },
+        {
+          "id": "mob-002",
+          "name": "Gojek Bike (Ojek)",
+          "type": "RIDESHARE",
+          "priority": "SECONDARY",
+
+          "costStructure": {
+            "amount": 2.00,
+            "currency": "USD",
+            "billingFrequency": "PER_TRIP_AVG"
+          },
+
+          "requirements": {
+            "license": "NONE",
+            "safetyGear": "PROVIDED_BY_DRIVER"
+          },
+
+          "description": "Best for short dinner trips or if you don't drive yourself.",
+          "riskNote": "Cannot pick up in 'Red Zones' (Local Taxi Mafia areas) like Ubud Center/Market.",
+
+          "bookingSource": {
+            "channel": "APP_DEEP_LINK",
+            "name": "Gojek App",
+            "value": "gojek://ride",
+            "actionLabel": "Open App",
+            "note": "Link your credit card for cashless payments to avoid change disputes."
+          }
+        },
+        {
+          "id": "mob-003",
+          "name": "Private Driver (Full Day)",
+          "type": "PRIVATE_HIRE",
+          "priority": "OPTIONAL",
+
+          "costStructure": {
+            "amount": 40.00,
+            "currency": "USD",
+            "billingFrequency": "PER_DAY"
+          },
+
+          "requirements": {
+            "license": "NONE",
+            "safetyGear": "NONE"
+          },
+
+          "description": "The stress-free option for day trips (Waterfalls/Temples) that are far apart.",
+          "riskNote": "Verify if the price includes petrol and parking fees before starting.",
+
+          "bookingSource": {
+            "channel": "WHATSAPP",
+            "name": "Gede (Trusted Driver)",
+            "value": "https://wa.me/628123456789",
+            "actionLabel": "Message Driver",
+            "note": "Mention 'WorldHub Guide' for the fixed $40 rate."
+          }
+        }
+      ]
+    }
+  },
+  "sportLocations": [
+    {
+      "id": "sport-001",
+      "name": "Jungle Padel",
+      "type": "GAME_COURT",
+      "sportTags": ["Padel", "Social Sports"],
+      "facility": {
+        "environment": "OUTDOOR_COVERED",
+        "climate": "FAN_COOLED",
+        "showerStatus": "AVAILABLE_FREE"
+      },
+      "gearStrategy": {
+        "rentalAvailable": true,
+        "items": ["Rackets", "Balls"],
+        "policy": "PAID_RENTAL"
+      },
+      "access": {
+        "mode": "BOOKING_REQUIRED",
+        "bookingOptions": [
+          {
+          "channel": "APP_DEEP_LINK",
+          "name": "Playtomic",
+          "link": "playtomic://venue/123"
+          }
+        ],
+        "priceStructure": {
+          "amount": 400000,
+          "currency": "IDR",
+          "unit": "PER_HOUR_GROUP"
+        }
+      },
+      "note": "The courts are glass-walled. Best time is 5 PM for sunset."
+    }
+  ],
+  "wellnessLocations": [
+    {
+      "id": "well-001",
+      "name": "Karsa Spa",
+      "type": "SPA",
+      "description": "...",
+      "tags": ["Balinese Massage", "Reiki", "Rice Field Views", "Couple Friendly"],
+      "location": {
+        "address": "Jl. Bangkiang Sidem...",
+        "googleMapsLink": "..."
+      },
+      "amenities": [
+        {
+          "category": "PRIVATE_ROOM",
+          "label": "Open-air private treatment villas"
+        },
+        {
+          "category": "WATER",
+          "label": "Outdoor Flower Bath Tubs"
+        },
+        {
+          "category": "COMFORT",
+          "label": "Welcome Ginger Tea"
+        },
+        {
+          "category": "CHANGING_AREA",
+          "label": "Private semi-outdoor showers"
+        }
+      ],
+      "policy": {
+        "noise": "SILENT_ZONE",
+        "clothing": "ROBES_PROVIDED",
+        "booking": "MANDATORY_ADVANCE"
+      },
+      "serviceMenu": [
+        {
+          "name": "Deep Tissue Massage",
+          "duration": "60 Min",
+          "cost": { "amount": 300000, "currency": "IDR" }
+        },
+        {
+          "name": "Flower Bath Session",
+          "duration": "30 Min",
+          "cost": { "amount": 150000, "currency": "IDR" }
+        }
+      ],
+      "bookingAction": {
+        "channel": "WHATSAPP",
+        "link": "https://wa.me/628123456789",
+        "actionLabel": "Request Reservation"
+      }
+    },
+    {
+      "id": "well-002",
+      "name": "Alchemy Yoga & Ice",
+      "type": "RECOVERY",
+      "description": "...",
+      "tags": ["Contrast Therapy", "Magnesium Pool", "Social Club"],
+      "location": {
+        "address": "Jl. Bangkiang Sidem...",
+        "googleMapsLink": "..."
+      },
+      "amenities": [
+        {
+          "category": "HEAT",
+          "label": "Infrared & Dry Sauna (90°C)"
+        },
+        {
+          "category": "COLD",
+          "label": "Ice Plunge (3°C)"
+        },
+        {
+          "category": "WATER",
+          "label": "Magnesium Thermal Pool"
+        },
+        {
+          "category": "CHANGING_AREA",
+          "label": "Lockers & Showers with Soap"
+        }
+      ],
+      "policy": {
+        "noise": "SOCIAL_LOUD",
+        "clothing": "SWIMWEAR_REQUIRED",
+        "booking": "WALKIN_OK"
+      },
+      "serviceMenu": [
+        {
+          "name": "Day Pass (Unlimited Access)",
+          "duration": null,
+          "cost": { "amount": 150000, "currency": "IDR" }
+        },
+        {
+          "name": "Towel Rental",
+          "duration": null,
+          "cost": { "amount": 20000, "currency": "IDR" }
+        }
+      ],
+      "bookingAction": {
+        "channel": "WEBSITE",
+        "link": "https://alchemy...",
+        "actionLabel": "View Schedule"
+      }
+    }
+  ],
+  "safety": {
+    "emergencyContacts": {
+      "police": "110",
+      "ambulance": "118",
+      "fire": "113"
+    },
+    "trustedServices": [
+      {
+        "id": "safe-001",
+        "role": "DOCTOR",
+        "name": "Dr. Ari (24/7 House Call)",
+        "contactAction": {
+          "channel": "WHATSAPP",
+          "value": "https://wa.me/628123456789",
+          "label": "Message Dr. Ari"
+        },
+        "useCase": "Best for non-emergency sickness that requires a house call to your villa.",
+        "priceConfig": {
+          "model": "FIXED",
+          "amount": 1000000,
+          "min": null,
+          "max": null,
+          "currency": "IDR",
+          "unit": "PER_VISIT"
+        }
+      },
+      {
+        "id": "safe-002",
+        "role": "HOSPITAL",
+        "name": "BIMC Hospital Ubud",
+        "contactAction": {
+          "channel": "PHONE",
+          "value": "+62361...",
+          "label": "Call Reception"
+        },
+        "useCase": "Go here for physical injuries, accidents, or severe conditions.",
+        "priceConfig": {
+          "model": "VARIES_BY_INSURANCE",
+          "amount": null,
+          "min": null,
+          "max": null,
+          "currency": "IDR",
+          "unit": "PER_TREATMENT"
+        }
+      },
+      {
+        "id": "safe-003",
+        "role": "PHARMACY",
+        "name": "Halodoc App",
+        "contactAction": {
+          "channel": "APP_DEEP_LINK",
+          "value": "halodoc://",
+          "label": "Open App"
+        },
+        "useCase": "Service for ordering hygiene products or items to your hotel.",
+
+        "priceConfig": {
+          "model": "STARTS_FROM",
+          "amount": 20000,
+          "min": null,
+          "max": null,
+          "currency": "IDR",
+          "unit": "DELIVERY_FEE"
+        }
+      },
+      {
+        "id": "safe-004",
+        "role": "PRIVATE_DRIVER",
+        "name": "Bluebird Taxi (Safe)",
+        "contactAction": {
+          "channel": "APP_DEEP_LINK",
+          "value": "bluebird://",
+          "label": "Request Safe Taxi"
+        },
+        "useCase": "Use this late at night to avoid unregistered street taxis.",
+
+        "priceConfig": {
+          "model": "RANGE",
+          "amount": null,
+          "min": 50000,
+          "max": 150000,
+          "currency": "IDR",
+          "unit": "AVG_TRIP"
+        }
+      }
+    ],
+    "tips": [
+      {
+        "topic": "Tap Water Safety",
+        "category": "HEALTH_RISK",
+        "severity": "HIGH",
+        "preventionRule": "Strictly NO tap water. Use bottled water for drinking and brushing teeth.",
+        "logisticalAction": "If you feel unwell, visit a pharmacy or contact the Mobile Doctor listed above."
+      },
+      {
+        "topic": "Monkey Aggression",
+        "category": "WILDLIFE_RISK",
+        "severity": "CRITICAL",
+        "preventionRule": "Do not hide food, do not make eye contact, and do not smile (show teeth).",
+        "logisticalAction": "If bitten or scratched, proceed IMMEDIATELY to the Hospital listed above."
+      },
+      {
+        "topic": "Dengue Fever",
+        "category": "HEALTH_RISK",
+        "severity": "MODERATE",
+        "preventionRule": "Apply mosquito repellent at sunrise and sunset. Sleep in air-conditioned rooms.",
+        "logisticalAction": "If you develop a sudden high fever, proceed to a clinic or hospital for testing."
+      }
+    ]
+  }
+}
